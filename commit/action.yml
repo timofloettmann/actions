@@ -1,0 +1,22 @@
+name: "commit"
+inputs:
+  user_email:
+    description: "The user.email to set"
+    default: "action@github.com"
+  user_name: 
+    description: "The user.name to set"
+    default: "GitHub Action"
+  msg:
+    description: "The commit message"
+    required: 
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.user_email }}
+    - ${{ inputs.user_name }}
+    - ${{ inputs.msg }}
+    
+branding:
+  icon: "box"
+  color: "blue"

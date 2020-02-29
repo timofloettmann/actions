@@ -1,0 +1,13 @@
+name: "jq"
+inputs:
+  file:
+    description: "The input json file"
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.file }}
+    - ${{ inputs.cmd }}
+branding:
+  icon: "box"
+  color: "blue"
